@@ -1,0 +1,105 @@
+/* Services.css */
+.services-section {
+  padding: 6rem 1rem;
+  background-color: #f8fafc; /* Slate-50 */
+  min-height: 100vh;
+}
+
+.services-container {
+  max-width: 80rem; /* Standard max-width for 3 cards */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  color: #64748b;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.header-line {
+  width: 60px;
+  height: 4px;
+  background-color: #f59e0b; /* Amber */
+  margin: 0 auto 4rem auto;
+  border-radius: 2px;
+}
+
+/* Grid Layout - 6 Items (3 per row) */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 per row on desktop */
+  }
+}
+
+/* Card Styling */
+.service-card {
+  background: white;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s ease;
+  border-bottom: 4px solid transparent;
+  
+  /* Animation Setup */
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Hover Effect */
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-bottom: 4px solid #f59e0b;
+}
+
+/* Trigger Animation Class */
+.service-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  background: #fffbeb; /* Light Amber bg for icon */
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: #475569;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}

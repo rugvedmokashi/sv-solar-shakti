@@ -1,0 +1,205 @@
+/* Navbar.css */
+
+/* 1. Main Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 5.5rem;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navbar-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 100%;
+}
+
+.navbar-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  /* This ensures items are spread out, but we control spacing manually below */
+  justify-content: space-between; 
+}
+
+/* --- LOGO (LEFT) --- */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  text-decoration: none;
+  /* Removed 'flex: 1' so it doesn't push the links to the center */
+}
+
+.logo-img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+}
+
+.logo-highlight {
+  color: #f59e0b;
+}
+
+/* --- NAVIGATION LINKS (MOVED TO RIGHT) --- */
+.nav-menu-center {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav-menu-center {
+    display: flex;
+    align-items: center;
+    gap: 2rem; /* Spacing between links */
+    
+    /* KEY CHANGE: pushing this group to the right */
+    margin-left: auto; 
+    margin-right: 2.5rem; /* Spacing between Links and Contact Button */
+  }
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #475569;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f59e0b;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1e293b;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* --- CONTACT BUTTON (FAR RIGHT) --- */
+.nav-cta-right {
+  display: none;
+  /* Removed 'flex: 1' so it doesn't take up extra space */
+}
+
+@media (min-width: 768px) {
+  .nav-cta-right {
+    display: flex;
+  }
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  color: white;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-1px);
+}
+
+/* --- MOBILE TOGGLE --- */
+.nav-mobile-toggle {
+  display: block;
+  /* Pushes hamburger to the far right on mobile */
+  margin-left: auto; 
+}
+
+@media (min-width: 768px) {
+  .nav-mobile-toggle {
+    display: none;
+  }
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #334155;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* --- MOBILE MENU OVERLAY --- */
+.nav-menu-mobile {
+  display: none;
+  position: fixed;
+  top: 5.5rem;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 1.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.nav-menu-mobile.is-open {
+  display: flex;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-menu-mobile button {
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+}
+
+.mobile-cta {
+  background-color: #f59e0b !important;
+  color: white !important;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center !important;
+}

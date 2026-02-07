@@ -1,0 +1,141 @@
+/* Contact.css */
+.contact-section {
+  padding: 5rem 1rem 0 1rem; /* No bottom padding because of copyright bar */
+  background-color: #1e293b; /* Slate-800 - Dark Theme */
+  color: white;
+}
+
+.contact-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-bottom: 5rem;
+}
+
+/* Header (Reusing styles but white text) */
+.contact-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-header .section-title {
+  color: white; /* Override default dark color */
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.contact-header .section-subtitle {
+  color: #94a3b8; /* Slate-400 */
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Layout */
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background: #0f172a; /* Slate-900 */
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 1024px) {
+  .contact-content {
+    flex-direction: row;
+  }
+}
+
+/* Left Side: Info */
+.contact-info {
+  flex: 1;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.info-icon {
+  font-size: 1.75rem;
+  background: rgba(255, 255, 255, 0.1);
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.info-details h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f59e0b; /* Amber */
+  margin-bottom: 0.25rem;
+}
+
+.info-details p {
+  color: #e2e8f0;
+  line-height: 1.5;
+}
+
+.sub-text {
+  font-size: 0.875rem;
+  color: #94a3b8 !important;
+}
+
+/* WhatsApp Button */
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #25D366; /* Official WhatsApp Green */
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+.whatsapp-btn:hover {
+  background-color: #22c35e;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.wa-icon {
+  font-size: 1.5rem;
+}
+
+/* Right Side: Map */
+.map-wrapper {
+  flex: 1;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .map-wrapper {
+    min-height: 300px;
+  }
+}
+
+/* Copyright Bar */
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 1.5rem;
+  color: #64748b;
+  font-size: 0.9rem;
+}
